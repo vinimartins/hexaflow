@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-canvas: #040507;
+  --color-surface: #0A0B0E;
+  --color-surface-elevated: #12141A;
+  --color-accent: #38BDF8;
+}
+
+:root {
+  --hx-canvas: #040507;
+  --hx-surface: #0A0B0E;
+  --hx-surface-elevated: #12141A;
+  --hx-border: #1C1E26;
+  --hx-text: #F1F5F9;
+}
+
+html.light {
+  --hx-canvas: #F8FAFC;
+  --hx-surface: #FFFFFF;
+  --hx-surface-elevated: #F1F5F9;
+  --hx-border: #CBD5E1;
+  --hx-text: #0F172A;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--hx-canvas);
+    color: var(--hx-text);
+    scroll-padding-top: 5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Black Piano Dark Mode: neutral obsidian hairlines & crisp specular depth */
+html:not(.light) :is(.border-slate-800, .border-slate-800\/80, .border-slate-800\/90) {
+  border-color: #1C1E26;
+}
+
+html:not(.light) :is(.border-slate-700, .border-slate-700\/80, .border-slate-700\/70) {
+  border-color: #2A2D37;
+}
+
+html:not(.light) :is(.divide-slate-800, .divide-slate-800\/80) > :not(:first-child) {
+  border-color: #1C1E26;
+}
+
+html:not(.light) .bg-slate-800 {
+  background-color: #1C1E26;
+}
+
+/* Technical Gray-Slate Light Mode Palette (preserves [data-code-surface="dark"] terminals) */
+html.light body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+html.light header {
+  background-color: rgba(248, 250, 252, 0.92) !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light :is(.bg-\[\#040507\], .bg-\[\#040507\]\/80, .bg-\[\#040507\]\/90, .bg-\[\#040507\]\/75):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  background-color: #F8FAFC !important;
+}
+
+html.light :is(.bg-\[\#0A0B0E\], .bg-\[\#0A0B0E\]\/85):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  background-color: #FFFFFF !important;
+}
+
+html.light :is(.bg-\[\#12141A\], .bg-\[\#12141A\]\/75, .bg-\[\#12141A\]\/55, .bg-\[\#12141A\]\/60, .bg-\[\#12141A\]\/40, .bg-\[\#07080B\]):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  background-color: #F1F5F9 !important;
+}
+
+html.light .bg-slate-800:not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  background-color: #E2E8F0 !important;
+}
+
+html.light :is(.border-slate-800, .border-slate-800\/80, .border-slate-800\/90, .border-slate-700, .border-slate-700\/80):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  border-color: #CBD5E1 !important;
+}
+
+html.light :is(.divide-slate-800, .divide-slate-800\/80) > :not(:first-child) {
+  border-color: #E2E8F0 !important;
+}
+
+html.light :is(.text-slate-50, .text-slate-100):not([data-code-surface="dark"], [data-code-surface="dark"] *, .bg-sky-400, .bg-sky-400 *) {
+  color: #0F172A !important;
+}
+
+html.light .text-slate-200:not([data-code-surface="dark"], [data-code-surface="dark"] *, .bg-sky-400, .bg-sky-400 *) {
+  color: #1E293B !important;
+}
+
+html.light .text-slate-300:not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  color: #334155 !important;
+}
+
+html.light :is(.text-slate-400, .text-slate-500):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  color: #475569 !important;
+}
+
+html.light .text-slate-600:not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  color: #64748B !important;
+}
+
+html.light :is(.text-sky-400, .text-sky-300):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  color: #0284C7 !important;
+}
+
+html.light .text-sky-200:not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  color: #0369A1 !important;
+}
+
+html.light :is(.border-sky-400\/70, .border-sky-400\/60, .border-sky-400\/50, .border-sky-400\/45, .border-sky-400\/40, .border-sky-400\/35, .border-sky-400\/25):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  border-color: rgba(2, 132, 199, 0.45) !important;
+}
+
+html.light :is(.text-emerald-400, .text-emerald-300):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  color: #047857 !important;
+}
+
+html.light :is(.text-amber-300, .text-amber-200):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  color: #B45309 !important;
+}
+
+html.light :is(.text-rose-400, .text-rose-300):not([data-code-surface="dark"], [data-code-surface="dark"] *) {
+  color: #BE123C !important;
+}
+
+html.light .bg-sky-400 {
+  background-color: #0284C7 !important;
+  color: #FFFFFF !important;
+}
+
+html.light .bg-sky-400:hover {
+  background-color: #0369A1 !important;
+}
+
+html.light .bg-sky-400 .text-slate-950,
+html.light .bg-sky-400.text-slate-950 {
+  color: #FFFFFF !important;
+}
+
+html.light .bg-amber-500\/5 {
+  background-color: rgba(245, 158, 11, 0.08) !important;
+}
+
+html.light [data-testid="glossary-desktop-popover"],
+html.light [data-testid="glossary-mobile-sheet"],
+html.light [data-testid="diagnostic-toast"] {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.16) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #64748B !important;
+}
+
+html.light input[type="range"] {
+  accent-color: #0284C7;
+  background-color: #CBD5E1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

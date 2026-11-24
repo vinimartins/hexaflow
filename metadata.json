@@ -1,0 +1,6 @@
+{
+  "name": "HexaFlow",
+  "description": "Esteira Autônoma de Engenharia sob governança ITIL (N1→N2→N3), Arquitetura Hexagonal, DRY e Clean Code.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
